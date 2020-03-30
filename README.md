@@ -39,7 +39,7 @@ The `--hl` argument is the number of hidden layers it should run with and the
 
 # bonus
 
-You can run the bonus part simply by calling `python3 partbonus.py output.csv plot.png`. This will use the same `output.csv` and the same functions from part3 with the ReLU activation function but will run it several times with different sizes of hidden layers. Then it will generate a `plot.png` file with the plot.
+You can run the bonus part simply by calling `python3 partbonus.py output.csv plot.png`. This will use the same `output.csv` and the same functions from part3 with the ReLU activation function but will run it several times with different sizes of hidden layers. Then it will generate a `plot.png` file with the plot. Example `plot.png` output from one run is included in the git repository.
 
 # as a note
 
