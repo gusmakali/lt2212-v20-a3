@@ -53,7 +53,7 @@ Maybe I am missing something vital here, but the current implementation is the o
 
 # results disscusion
 
-The model currently runs with 300 epochs as I see better results with this number. I also see a bit better result for when run with hidden layers, 
+The model currently runs with 30 epochs as I see better results with this number. I also see a bit better result for when run with hidden layers, 
 however not drastically better.
 I also see a bit better result for choice 1 (ReLU).  However all the results don't differ much, I think because of the poor quality of data.
 
