@@ -1,4 +1,4 @@
-from diff import build_train_model 
+from a3_model import build_train_model 
 import matplotlib.pyplot as plt
 from sklearn.metrics import precision_recall_curve 
 import argparse
