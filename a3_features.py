@@ -78,6 +78,7 @@ if __name__ == "__main__":
                         column[c].append(wordcounts[filename][c])
                     else:
                         column[c].append(0)
+        
         l = []
         for f in allfiles:
 
@@ -102,7 +103,7 @@ if __name__ == "__main__":
         X_test = to_file[int(len(to_file)*0.8):]
         y_train = classnames[:int(len(classnames)*0.8)]
         y_test = classnames[int(len(classnames)*0.8):]
-        
+
         train = pd.DataFrame(X_train)
         train["filename"] = y_train
         train["target"] = ["train"] * len(X_train)
@@ -111,7 +112,6 @@ if __name__ == "__main__":
         test["filename"] = y_test
         test["target"] = ["test"] * len(X_test)        
         
-    
         return train.append(test)
 
 

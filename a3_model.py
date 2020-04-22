@@ -118,9 +118,9 @@ def build_train_model(featurefile, hidden_layers=None, choice=None, should_print
     y_train = np.array([v[2] for v in train_samples])
     y_test = np.array([v[2] for v in test_samples])
     
-    scaler = StandardScaler()
-    X_train = scaler.fit_transform(X_train)
-    X_test = scaler.fit_transform(X_test)
+    # scaler = StandardScaler()
+    # X_train = scaler.fit_transform(X_train)
+    # # X_test = scaler.fit_transform(X_test)
 
     epochs = 30
     batch_size = 32 
@@ -168,7 +168,7 @@ def build_train_model(featurefile, hidden_layers=None, choice=None, should_print
     
     y_pred_list = []
     model.eval()
-    for_bonus = []
+    y_pred_bonus = []
     with torch.no_grad():
         for X_batch in test_load:
             X_batch = X_batch.to(device)
@@ -176,10 +176,11 @@ def build_train_model(featurefile, hidden_layers=None, choice=None, should_print
             y_pred = model(X_batch)
            
             y_pred = torch.sigmoid(y_pred)
-            
+            y_pred_b = y_pred
             y_pred_tag = torch.round(y_pred)
+            y_pred_bonus.append(y_pred_b.cpu().numpy()) 
             y_pred_list.append(y_pred_tag.cpu().numpy())
-    
+    y_pred_bonus = [a.squeeze().tolist() for a in y_pred_bonus]
     y_pred_list = [a.squeeze().tolist() for a in y_pred_list]
     
     r1 = classification_report(y_test, y_pred_list, output_dict=True)
@@ -187,7 +188,7 @@ def build_train_model(featurefile, hidden_layers=None, choice=None, should_print
     if should_print:
         print(pd.DataFrame(r1), "\naccuracy:", r2)
 
-    return (model, y_pred_list, y_test)
+    return (model, y_pred_bonus, y_test)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train and test a model on features.")

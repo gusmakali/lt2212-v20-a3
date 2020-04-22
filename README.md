@@ -6,6 +6,7 @@ You can run the `a3_features.py` by providing some commandline arguments. Here i
 
 ```
 python3 a3_features.py enron_sample output.csv 100
+PLEASE NOTE. YOU NEED TO RUN THE SCRIPT IN THE SAME DIRECTORY the enron_samples FOLDER IS. 
 ```
 
 In this example enron_sample is the folder where the sample texts are. Output.csv is the target to where to output the results and 100 is the number of dimensions.
@@ -37,9 +38,12 @@ python3 a3_model.py output.csv --hl 64 --choice 1
 The `--hl` argument is the number of hidden layers it should run with and the
 `--choice` argument takes only 1 or 2. Using 1 will make the program use ReLU activation function and 2 will make it use Softmax. Same training information and reports will be printed as in part 2.
 
+
+
 # bonus
 
 You can run the bonus part simply by calling `python3 partbonus.py output.csv plot.png`. This will use the same `output.csv` and the same functions from part3 with the ReLU activation function but will run it several times with different sizes of hidden layers. Then it will generate a `plot.png` file with the plot. Example `plot.png` output from one run is included in the git repository.
+The bonus script imports a function from a3_model.py. Please, run in in the same directory. 
 
 # as a note
 
