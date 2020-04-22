@@ -38,6 +38,13 @@ python3 a3_model.py output.csv --hl 64 --choice 1
 The `--hl` argument is the number of hidden layers it should run with and the
 `--choice` argument takes only 1 or 2. Using 1 will make the program use ReLU activation function and 2 will make it use Softmax. Same training information and reports will be printed as in part 2.
 
+## results disscusion
+
+The model currently runs with 30 epochs as I see better results with this number. I also see a bit better result for when run with hidden layers, 
+however not drastically better.
+I also see a bit better result for choice 1 (ReLU).  However all the results don't differ much, I think because of the poor quality of data.
+
+
 
 
 # bonus
@@ -54,10 +61,4 @@ The thing is that if y_test array is always 1 or 0, and after prediction list wo
 the classification report would give an error, as it cannot "handle a mix of binary and continuous targets". 
 
 Maybe I am missing something vital here, but the current implementation is the only way I could solve the assignment.
-
-# results disscusion
-
-The model currently runs with 30 epochs as I see better results with this number. I also see a bit better result for when run with hidden layers, 
-however not drastically better.
-I also see a bit better result for choice 1 (ReLU).  However all the results don't differ much, I think because of the poor quality of data.
 
